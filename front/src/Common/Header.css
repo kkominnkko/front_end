@@ -1,0 +1,78 @@
+#header {
+	justify-content: space-between;
+	padding: 15px;
+}
+
+#header::before {
+	content: "";
+	display: block;
+	position: absolute;
+	background-image: url(~/assets/logo-background.svg);
+	width: 430px;
+	height: 300px;
+	top: -30px;
+	left: -50px;
+	z-index: -1;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.logo {
+	background-image: url(~/assets/logo.svg);
+	width: 80px;
+	height: 80px;
+	margin-right: -10px;
+}
+
+.logo-text {
+	font-family: Roboto;
+	font-size: 50px;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.logo-text span {
+	color: var(--primary-color);
+}
+
+.header-nav {
+	width: 70vw;
+	justify-content: space-evenly;
+	font-size: 26px;
+}
+
+.header-nav a:not([class^="sign"][class$="button"]) {
+	color: var(--dark-color);
+}
+
+.header-nav > div {
+	display: inline-block;
+	text-align: center;
+}
+
+.user-info {
+	margin-bottom: 10px;
+}
+
+.header-nav a:not([class^="sign"][class$="button"], .user-info) {
+	position: relative;
+}
+
+.header-nav a:not([class^="sign"][class$="button"], .user-info)::after {
+	content: "";
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 0%;
+	background: var(--dark-color);
+	height: 1.5px;
+	transition: width 0.3s;
+}
+
+.header-nav a:not([class^="sign"][class$="button"]):hover::after {
+	width: 95%;
+}
